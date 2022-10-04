@@ -1,0 +1,47 @@
+<mat-card>
+  <mat-card-title><mat-toolbar><span class="header">Upload de XML</span></mat-toolbar></mat-card-title>
+  <mat-card-content>
+    <div class="fileInput">
+      <button type="button" mat-raised-button (click)="fileInput.click()">
+        <span class="material-icons"> attach_file </span>
+        Selecione um ou mais arquivos..
+      </button>
+      <input
+        hidden
+        #fileInput
+        type="file"
+        multiple
+        accept="text/xml"
+        (change)="selectFiles($event)"
+      />
+    </div>
+    <mat-list class="files" *ngIf="progressInfos.length > 0">
+      <mat-list-item *ngFor="let p of progressInfos">
+        <div class="progress" *ngIf="p.value !== 100">
+          <mat-progress-bar
+            color="primary"
+            mode="determinate"
+            [value]="p.value"
+          ></mat-progress-bar>
+          <span class="fileName">{{ p.fileName }} ({{ p.value }}%)</span>
+        </div>
+        <div class="sucess" *ngIf="p.sucessMsg">
+            <span>{{ p.sucessMsg }}</span>
+        </div>
+        <div class="fail" *ngIf="p.failMsg">
+            <span>{{ p.failMsg }}</span>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      mat-button
+      color="primary"
+      [disabled]="!selectedFiles"
+      (click)="uploadFiles()"
+    >
+      Enviar arquivos
+    </button>
+  </mat-card-actions>
+</mat-card>

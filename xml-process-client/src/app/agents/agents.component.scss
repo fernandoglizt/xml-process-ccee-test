@@ -1,0 +1,44 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  mat-card {
+    width: 400px;
+  }
+  mat-card-title {
+    padding-bottom: 15px;
+  }
+  mat-card-actions {
+    text-align: right;
+  }
+  .header {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  .fileInput {
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+  }
+  .files {
+    display: flex;
+    flex-flow: column;
+    & > * {
+      flex: 1;
+      width: 100%;
+      border-left: 2px solid gray;
+      padding-left: 5px;
+      margin: 5px 0;
+      .progress {
+        width: 100%;
+      }
+      .sucess {
+        background-color: rgb(239, 255, 214);
+      }
+      .fail {
+        background-color: rosybrown;
+      }
+    }
+  }
+}
