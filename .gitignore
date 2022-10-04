@@ -1,2 +1,5 @@
 xml-process-server/.idea/vcs.xml
 xml-process-server/target/*
+xml-process-client/.angular/*
+xml-process-client/node_modules/*
+xml-process-client/yarn.lock
