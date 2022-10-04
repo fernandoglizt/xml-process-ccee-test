@@ -34,3 +34,5 @@ Criar um sistema Web composto de um Front-end SPA (_Single Page Application_) An
   - Maven 3
 
 1. Disponibilizá-lo em um repositório Git público (exemplo: GitHub, Bitbucket).
+
+![](https://github.com/fernandoglizt/xml-process-ccee-test/blob/master/gif.gif)
